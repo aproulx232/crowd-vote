@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
     <PublishAot>true</PublishAot>
+    <UserSecretsId>effeb1cf-cce8-40ff-ad53-7ab361d2399d</UserSecretsId>
   </PropertyGroup>
 
 </Project>
