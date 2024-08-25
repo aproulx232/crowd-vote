@@ -1,0 +1,11 @@
+@CrowdVote_HostAddress = http://localhost:5173
+
+GET {{CrowdVote_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{CrowdVote_HostAddress}}/todos/1
+Accept: application/json
+
+###
