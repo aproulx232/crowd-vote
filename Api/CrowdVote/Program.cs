@@ -23,7 +23,7 @@ todosApi.MapGet("/{id}", (int id) =>
     sampleTodos.FirstOrDefault(a => a.Id == id) is { } todo
         ? Results.Ok(todo)
         : Results.NotFound());
-app.Map("/", x => Results.Ok("Hello"));
+app.MapGet("/", () => Results.Ok("Hello"));
 app.Run();
 
 public record Todo(int Id, string? Title, DateOnly? DueBy = null, bool IsComplete = false);
