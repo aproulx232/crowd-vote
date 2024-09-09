@@ -54,6 +54,7 @@ jobs:
           path: ${{ github.workspace }}/Web/${{ env.APP_NAME }}/build
           
       - name: Deploy
+        working-directory: ${{ github.workspace }}/Web/${{ env.APP_NAME }}
         run: |
           git config --global user.name $user_name
           git config --global user.email $user_email
