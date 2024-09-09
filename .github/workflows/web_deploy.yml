@@ -38,9 +38,16 @@ jobs:
           node-version: "20"
           cache: npm
           cache-dependency-path: /home/runner/work/crowd-vote/crowd-vote/Web/my-react-app
-          
+      
+      - name: Example step
+        run: |
+          echo "The repository is cloned to: ${{ github.workspace }}"
+          ls ${{ github.workspace }}
+          cd ${{ github.workspace }}/Web/my-react-app
+          ls
+
       - name: Move To App
-        run: cd /home/runner/work/crowd-vote/crowd-vote/Web/my-react-app
+        run: cd ${{ github.workspace }}/Web/my-react-app
      
       - name: Install dependencies
         run: npm ci
