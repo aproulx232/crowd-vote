@@ -37,28 +37,18 @@ jobs:
         with:
           node-version: "20"
           cache: npm
-          cache-dependency-path: /home/runner/work/crowd-vote/crowd-vote/Web/my-react-app
-      
-      - name: Example step
+          cache-dependency-path: Web/my-react-app/package-lock.json
+
+      - name: Install dependencies and build
+        working-directory: ${{ github.workspace }}/Web/my-react-app
         run: |
-          echo "The repository is cloned to: ${{ github.workspace }}"
-          ls ${{ github.workspace }}
-          cd ${{ github.workspace }}/Web/my-react-app
-          ls
+          npm ci
+          npm run build
 
-      - name: Move To App
-        run: cd ${{ github.workspace }}/Web/my-react-app
-     
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ${{ github.workspace }}/Web/my-react-app/out
 
   # Deployment job
   deploy:
