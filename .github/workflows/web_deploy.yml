@@ -48,7 +48,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ github.workspace }}/Web/my-react-app/out
+          path: ${{ github.workspace }}/Web/my-react-app/build
 
   # Deployment job
   deploy:
